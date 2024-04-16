@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canlı Saat ve Tarih</title>
+<style>
+  #clock {
+    font-size: 24px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div id="clock"></div>
+
+<script>
+function updateClock() {
+  var now = new Date();
+  var hours = now.getHours();
+  var minutes = now.getMinutes();
+  var seconds = now.getSeconds();
+  var day = now.getDate();
+  var month = now.getMonth() + 1; // JavaScript'te aylar 0'dan başlar, bu yüzden +1 ekliyoruz.
+  var year = now.getFullYear();
+
+  // Saat, dakika ve saniyelerin 10'dan küçük olanlar için başlarına 0 ekleme
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  // Tarihi ve saati HTML içine yerleştirme
+  document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds + " - " + day + "/" + month + "/" + year;
+
+  // Her saniyede bir saat ve tarih bilgisini güncelle
+  setTimeout(updateClock, 1000);
+}
+
+// Sayfa yüklendiğinde saat ve tarih bilgisini güncelle
+window.onload = updateClock;
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+.container{
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50% , -50%);
+}
+.boxs{
+    display: flex;
+    
+    color: black;
+    justify-content: space-around;
+    margin: auto;
+}
+.box1,.box2,.box3{
+  
+   text-align: center;
+   width: 25%;
+   padding: 10px;
+   background-color: white;
+   border-radius: 5px;
+   font-size: 80px;
+}
+.date {
+    color: white;
+    margin: 20px 0;
+    font-style: italic;
+}
